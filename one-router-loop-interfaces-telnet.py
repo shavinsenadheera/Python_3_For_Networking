@@ -18,7 +18,7 @@ print("Staring to configure the " + str(HOST))
 ts.write(b"conf t\n")
 for i in range(0, 5):
     ts.write(b"int loop " + str(i).encode('ascii') + b"\n")
-    ts.write(b"ip address 1.1." + str(i+2).encode('ascii') + b"." +str(i+1).encode('ascii') + b" 255.255.255.0\n")
+    ts.write(b"ip address 1.1." + str(i+2).encode('ascii') + b"." +str(i+1).encode('ascii') + b" 255.255.255.255\n")
 ts.write(b"end\n")
 ts.write(b"wr\n")
 ts.write(b"exit\n")
