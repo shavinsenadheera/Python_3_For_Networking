@@ -25,6 +25,6 @@ rconn.send("end\n")
 rconn.send("wr\n")
 time.sleep(1)
 output = rconn.recv(65535)
-print("Sucessfully done the configurations!")
+print("Hey Admin! Sucessfully done the configurations!")
 sshclient.close()
 
