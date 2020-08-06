@@ -24,7 +24,7 @@ def runcommands(hostname, username, password):
         sshclient.close()
 
     except Exception as er:
-        print("Admin ! Check the North Bound !")
+        print("Admin ! Check the configurations !")
         print(er)
 
 hostname = input("IP ADDRESS: ")
