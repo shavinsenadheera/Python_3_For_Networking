@@ -1,11 +1,14 @@
 from netmiko import ConnectHandler
 
-rios = {'device_type':'cisco_ios','ip':'192.168.1.6', 'username':'shavindu','password':'shavindu'}
+rios = {'device_type':'cisco_ios', 'ip':'192.168.122.211', 'username':'shavindu', 'password':'shavindu'}
 conn = ConnectHandler(**rios)
 
-conn.send_enable()
-conn.send_command('show ip int br')
-print(output)
+for i in range(0, 11):
+    print("creating int loop " + str(i))
+    configs = ['int loop ' + str(i), 'ip address ' + str(i+1) + '.' + str(i+1) + '.' + str(i) + '.' + str(i), 'exit']
+    conn.send_config_set(configs)
+saveconf = ['end', 'wr']
+conn.send_config_set(saveconf)
 
-configs = ['conf t','int loop 0', 'ip address 1.1.1.1 255.255.255.255', 'exit', 'end']
-conn.send_config_set(configs)
+output = conn.send_command('shoeip int br')
+print(output)
