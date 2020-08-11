@@ -16,4 +16,13 @@ Paramiko Installation Process
 5. pip3 install cryptography
 6. pip3 install paramiko
 
-@shavinsenadheera
+Netmiko Installation Process
+
+
+1. apt-get update
+3. apt-get install python3 python-dev python3-dev
+4. apt-get install build-essential libssl-dev libffi-dev
+4. apt-get install python3-pip
+5. pip3 install netmiko==2.4.2
+
+Author: Shavindu Senadheera
